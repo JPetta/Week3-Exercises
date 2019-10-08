@@ -1,0 +1,35 @@
+function groupAnimals(arr) {
+  var arrResult = [];
+  var arrA = []
+  var arrC = []
+  var arrK = []
+  var arrU = []
+
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i][0]=='a' ){
+      arrA.push(arr[i])
+    }
+
+    if(arr[i][0]=='c'){
+      arrC.push(arr[i])
+    }
+
+    if(arr[i][0]=='k'){
+      arrK.push(arr[i])
+    }
+
+    if(arr[i][0]=='u'){
+      arrU.push(arr[i])
+    }
+
+  }
+  arrResult.push(arrA,arrC,arrK,arrU)
+
+  return arrResult
+}
+
+// TEST CASES
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+// [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
+// [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda', 'kancil'], ['unta'] ]

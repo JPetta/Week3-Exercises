@@ -1,0 +1,51 @@
+function targetTerdekat(arr) {
+  var indO;
+  var indX;;
+  var spaceBetween;
+
+  for (var i = 0; i < arr.length-1; i++){
+    if (arr[i]=='o'){
+      indO=i;
+    }
+  }
+
+  for (var i = arr.length-1; i > 0; i--){
+    if (arr[i]=='x'){
+      indX=i;
+    }
+  }
+
+  spaceBetween = indX-indO
+  
+  if(indX == undefined){
+    spaceBetween = 0
+  }
+
+  if(indO > indX){
+    var indO2
+    var indX2
+
+    for (var i = 0; i < arr.length-1; i++){
+    if (arr[i]=='x'){
+      indX2=i;
+      }
+    }
+
+  for (var i = arr.length-1; i > 0; i--){
+    if (arr[i]=='o'){
+      indO2=i;
+      }
+    }
+
+    spaceBetween = indO2-indX2
+  }
+
+  return spaceBetween;
+}
+
+// TEST CASES
+console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
+console.log(targetTerdekat(['o', ' ', ' ', ' ', 'x', 'x', 'x'])); // 4
+console.log(targetTerdekat(['x', ' ', ' ', ' ', 'x', 'x', 'o', ' '])); // 1
+console.log(targetTerdekat([' ', ' ', 'o', ' '])); // 0
+console.log(targetTerdekat([' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x'])); // 2
