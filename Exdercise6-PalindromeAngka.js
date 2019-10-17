@@ -1,9 +1,10 @@
 function angkaPalindrome(num) {
-  //jadikan num sebagai string agar bisa di ambil index nya//
-  var numString = num.toString();
-  var numReversed ="";
+//jadikan num sebagai string agar bisa di ambil index nya//
+while(true){
+var numString = num.toString();
+var numReversed ="";
 
-  //balikkan angka lalu masukkan ke variabel numReversed//
+//balikkan angka lalu masukkan ke variabel numReversed//
 for (var i = numString.length-1; i >= 0; i--){
   numReversed += numString[i];
 }
@@ -12,16 +13,21 @@ for (var i = numString.length-1; i >= 0; i--){
 var numIntReversed = parseInt(numReversed,10);
 var numInt = parseInt(numString,10);
 
-// return numInt+" "+numIntReversed
+if (numReversed.length == 1){
+  return numInt+1}
 
-//jika palindrome, angka ditambah satu. Jika tidak, tambah terus numInt sampai menjadi palindrome//
-if (numInt==numIntReversed){
-  return numInt+=1
+// Jika tidak palindrome, tambah terus numInt sampai menjadi palindrome//
+if (numInt!=numIntReversed){
+  num+=1
 }
-else{
-  return "perhitungan sampai palindrome"
-  }  
+else if (numInt == numIntReversed){
+ return numInt
 }
+
+}
+
+}
+
 
 
 
