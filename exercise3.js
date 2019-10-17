@@ -1,7 +1,8 @@
 var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];
 
 function dataHandling2 (nomor, nama, asal, tglLahir, hobby) {
-  input.splice(1,4,"Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro")
+  input.splice(1,2,"Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung")
+  input.splice(4,1,"SMA Internasional Metro")
   
   var tglLahirString = input[3].toString();
   var tglLahirArray = tglLahirString.split("/");
