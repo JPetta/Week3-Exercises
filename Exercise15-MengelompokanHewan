@@ -1,31 +1,18 @@
 function groupAnimals(arr) {
-  var arrResult = [];
-  var arrA = []
-  var arrC = []
-  var arrK = []
-  var arrU = []
-
+  var res = []
   for(var i = 0; i < arr.length; i++){
-    if(arr[i][0]=='a' ){
-      arrA.push(arr[i])
+    var exist = false
+    for(var j = 0; j < res.length; j++){
+      if(arr[i][0]==res[j][0][0]){
+        res[j].push(arr[i])
+        exist = true
+      }
     }
-
-    if(arr[i][0]=='c'){
-      arrC.push(arr[i])
+    if(exist == false){
+      res.push([arr[i]])
     }
-
-    if(arr[i][0]=='k'){
-      arrK.push(arr[i])
-    }
-
-    if(arr[i][0]=='u'){
-      arrU.push(arr[i])
-    }
-
   }
-  arrResult.push(arrA,arrC,arrK,arrU)
-
-  return arrResult
+  return res
 }
 
 // TEST CASES
